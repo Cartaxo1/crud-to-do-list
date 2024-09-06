@@ -6,38 +6,99 @@
   >
     <section>
       <div class="text-center">
-        <h1 class="text-6xl font-bold">Status de Tarefas</h1>
-        <p class="text-3xl font-light mt-4">Veja o seu progresso</p>
+        <h1 class="text-6xl font-bold text-primary">Status de Tarefas</h1>
+        <p class="text-3xl font-light mt-4 text-primary">
+          Veja o seu progresso
+        </p>
       </div>
       <div class="flex justify-content-center gap-6 mt-8">
         <div
-          class="border-1 w-24rem h-12rem border-round-xl p-4 flex flex-column justify-content-between"
+          class="border-1 border-primary w-24rem h-12rem border-round-xl p-4 flex flex-column justify-content-between"
         >
-          <h2 class="text-2xl font-normal">Tarefas completas</h2>
-          <p class="text-5xl font-bold">0</p>
-          <p>+5 tarefas</p>
+          <h2 class="text-2xl font-normal text-primary">Tarefas completas</h2>
+          <p class="text-5xl font-bold text-primary">0</p>
+          <p class="text-primary">+5 tarefas</p>
         </div>
         <div
-          class="border-1 w-24rem h-12rem border-round-xl p-4 flex flex-column justify-content-between"
+          class="border-1 border-primary w-24rem h-12rem border-round-xl p-4 flex flex-column justify-content-between"
         >
-          <h2 class="text-2xl font-normal">Tarefas em progresso</h2>
-          <p class="text-5xl font-bold">0</p>
-          <p>+5 tarefas</p>
+          <h2 class="text-2xl font-normal text-primary">
+            Tarefas em progresso
+          </h2>
+          <p class="text-5xl font-bold text-primary">0</p>
+          <p class="text-primary">+5 tarefas</p>
         </div>
         <div
-          class="border-1 w-24rem h-12rem border-round-xl p-4 flex flex-column justify-content-between"
+          class="border-1 w-24rem h-12rem border-round-xl p-4 flex flex-column justify-content-between border-primary"
         >
-          <h2 class="text-2xl font-normal">Tarefas incompletas</h2>
-          <p class="text-5xl font-bold">0</p>
-          <p>+5 tarefas</p>
+          <h2 class="text-2xl font-normal text-primary">Tarefas incompletas</h2>
+          <p class="text-5xl font-bold text-primary">0</p>
+          <p class="text-primary">+5 tarefas</p>
         </div>
       </div>
     </section>
     <section>
-      <div
-        class="w-full h-screen flex flex-column align-items-center gap-4 pt-8"
-      >
-        <h2 class="text-6xl font-bold">Tarefas de Hoje</h2>
+      <div class="w-full flex flex-column align-items-center gap-4 pt-8">
+        <h2 class="text-6xl font-bold text-primary">Tarefas de Hoje</h2>
+        <button
+          popoverTarget="modal"
+          class="h-4rem w-22rem border-round-2xl border-0 cursor-pointer text-2xl text-color-secondary"
+        >
+          Adicione uma tarefa
+        </button>
+        <div
+          popover
+          id="modal"
+          class="w-30rem h-30rem border-round-2xl p-4 border-0 m-auto"
+          role="dialog"
+          style="background-color: var(--bg-color)"
+        >
+         <div class="flex align-items-center justify-content-center">
+           <form action="" method="post">
+            <div class="flex flex-column m-2 gap-2">
+              <label for="name" class="text-2xl text-primary"
+                >Qual o nome da tarefa?</label
+              >
+              <input
+                type="text"
+                name="name"
+                id="name"
+                class="p-2 border-round-2xl border-primary w-24rem h-3rem"
+                style="background-color: #fff"
+                placeholder="Insira o nome da tarefa"
+                required
+              />
+              <label for="description" class="text-2xl text-primary mt-4"
+                >Descreva a tarefa:</label
+              >
+              <input
+                type="textarea"
+                name="name"
+                id="name"
+                class="p-2 border-round-2xl border-primary w-24rem h-3rem"
+                style="background-color: #fff"
+                placeholder="Descreva em poucas palavras a tarefa"
+                required
+              />
+              <label for="date" class="text-2xl text-primary mt-4"
+                >Qual a data da tarefa?</label
+              >
+              <input
+                type="date"
+                name="date"
+                id="date"
+                class="p-2 border-round-2xl border-primary w-24rem h-3rem"
+              />
+              <button
+                type="submit"
+                class="h-3rem w-24rem border-round-2xl border-0 cursor-pointer text-2xl text-color-secondary mt-4"
+              >
+                Adicionar
+              </button>
+            </div>
+          </form>
+         </div>
+        </div>
       </div>
     </section>
   </div>
