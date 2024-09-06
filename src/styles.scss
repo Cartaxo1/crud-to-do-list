@@ -1,20 +1,22 @@
 @import "primeicons/primeicons.css";
 @import "primeflex/primeflex.css";
-@import "primeng/resources/themes/lara-light-blue/theme.css";
+@import "primeng/resources/themes/lara-light-purple/theme.css";
 @import "primeng/resources/primeng.css";
 
 * {
+  font-family: "Roboto", sans serif;
+}
+
+:root {
+  --nav-color: #050505cc;
+  --bg-color: #141414cc;
+  --primary-color: #fff;
+  --secondary-color: #8b5cf6;
+}
+
+body,
+html {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
-
-:root {
-  font-family: "Roboto", sans serif;
-
-  --nav-color: #050505cc;
-  --bg-color: #141414cc;
-  --primary-color: #fff;
-}
-
-
