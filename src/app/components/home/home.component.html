@@ -29,13 +29,12 @@
               backgroundColor: 'var(----bg-color)',
               color: 'white',
               width: '20rem',
-              border: '1px solid var(--primary-color)'
+              border: '1px solid var(--primary-color)',
             }"
             header="Tarefas em progresso"
           >
             <p class="m-0 text-5xl">0</p>
             <p>+5 tarefas</p>
-
           </p-card>
         </div>
         <div class="card flex justify-content-center">
@@ -75,6 +74,7 @@
             [resizable]="false"
             [closable]="false"
             [baseZIndex]="10000"
+            styleClass="custom-dialog"
           >
             <span class="p-text-secondary block mb-5">Adicione uma tarefa</span>
             <div class="flex align-items-center gap-3 mb-3">
