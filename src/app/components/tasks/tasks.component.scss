@@ -1,0 +1,9 @@
+:host ::ng-deep {
+  [pDraggable] {
+    cursor: move;
+  }
+}
+
+#tasks {
+  height: 85vh;
+}
