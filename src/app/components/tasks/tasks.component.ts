@@ -25,15 +25,8 @@ export class TasksComponent {
   }
   ngOnInit() {
     this.selectedTasks = [];
-    this.tasks = [
-      {
-        id: 1,
-        created_at: '2022-11-01T00:00:00.000Z',
-        title: 'Tarefa 1',
-        description: 'Descrição da tarefa 1',
-        status: false,
-      },
-    ];
+    this.tasks;
+    this.getTasks()
   }
 
   dragStart(task: Task) {
