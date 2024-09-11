@@ -9,14 +9,14 @@
     </div>
     <div class="flex align-items-center gap-6 mr-4">
       <a
-        routerLink="/home"
         class="text-3xl no-underline cursor-pointer text-primary"
+        [routerLink]="['/home']"
         >Início</a
       >
-      <a routerLink="/task" class="text-3xl no-underline text-primary">Tarefas</a>
-      <a href="#" class="text-3xl no-underline text-primary"
-        >Calendário</a
+      <a class="text-3xl no-underline text-primary" [routerLink]="['/task']"
+        >Tarefas</a
       >
+      <a href="#" class="text-3xl no-underline text-primary">Calendário</a>
       <a href="#" class="text-3xl no-underline text-primary">Contato</a>
     </div>
   </div>
