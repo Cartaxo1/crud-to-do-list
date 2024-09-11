@@ -8,6 +8,7 @@ import { InputTextModule } from 'primeng/inputtext';
 import { CardModule } from 'primeng/card';
 import { TasksService } from '../../services/tasks.service';
 import { Task } from '../../models/tasks.model';
+import { FormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-home',
@@ -19,6 +20,7 @@ import { Task } from '../../models/tasks.model';
     DialogModule,
     InputTextModule,
     CardModule,
+    FormsModule,
   ],
   templateUrl: './home.component.html',
   styleUrl: './home.component.scss',
@@ -27,6 +29,10 @@ export class HomeComponent {
   visible: boolean = false;
 
   tasks: Task[] = [];
+  id = '';
+  title = '';
+  description = '';
+  status = false;
 
   constructor(private tasksService: TasksService) {}
 
@@ -39,6 +45,21 @@ export class HomeComponent {
       this.tasks = tasks;
       console.log(this.tasks);
     });
+  }
+
+  addNewTask() {
+    if (!this.title || !this.description) {
+      return;
+    }
+    this.tasksService
+      .addNewTask({
+        title: this.title,
+        description: this.description,
+        status: this.status,
+      })
+      .subscribe((_) => {
+        this.getTasks();
+      });
   }
 
   ngOnInit() {
