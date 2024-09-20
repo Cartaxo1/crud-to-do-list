@@ -11,7 +11,21 @@
         pDraggable
         (onDragStart)="dragStart(task)"
         (onDragEnd)="dragEnd()"
+        (click)="showDialog()"
       >
+        <p-dialog
+          header="{{task.title}}"
+          [(visible)]="visible"
+          [modal]="true"
+          [breakpoints]="{ '1199px': '75vw', '575px': '90vw' }"
+          [style]="{ width: '50vw' }"
+          [draggable]="false"
+          [resizable]="false"
+        >
+          <p>
+            {{task.description}}
+          </p>
+        </p-dialog>
         {{ task.title }}
         <span (click)="deleteTask(task.id!)" class="cursor-pointer">...</span>
       </li>

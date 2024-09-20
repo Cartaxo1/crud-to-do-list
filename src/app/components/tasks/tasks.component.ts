@@ -3,10 +3,12 @@ import { Component } from '@angular/core';
 import { TasksService } from '../../services/tasks.service';
 import { Task } from '../../models/tasks.model';
 import { DragDropModule } from 'primeng/dragdrop';
+import { DialogModule } from 'primeng/dialog';
+import { ButtonModule } from 'primeng/button';
 @Component({
   selector: 'app-tasks',
   standalone: true,
-  imports: [DragDropModule],
+  imports: [DragDropModule, DialogModule, ButtonModule],
   templateUrl: './tasks.component.html',
   styleUrl: './tasks.component.scss',
 })
@@ -14,6 +16,7 @@ export class TasksComponent {
   tasks: Task[] = [];
   selectedTasks: Task[] = [];
   draggedTask: Task | undefined | null;
+  visible: boolean = false;
 
   constructor(private tasksService: TasksService) {}
 
@@ -24,15 +27,24 @@ export class TasksComponent {
     });
   }
 
+  showDialog() {
+    if (this.visible !== true) {
+      this.visible = true;
+    } else {
+      this.visible = false;
+    }
+    console.log(this.visible);
+  }
+
   deleteTask(id: number) {
-    this.tasksService.deleteTask(id).subscribe(_ => {
-      this.getTasks()
-    })
+    this.tasksService.deleteTask(id).subscribe((_) => {
+      this.getTasks();
+    });
   }
   ngOnInit() {
     this.selectedTasks = [];
     this.tasks;
-    this.getTasks()
+    this.getTasks();
   }
 
   dragStart(task: Task) {
