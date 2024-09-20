@@ -23,6 +23,12 @@ export class TasksComponent {
       console.log(this.tasks);
     });
   }
+
+  deleteTask(id: number) {
+    this.tasksService.deleteTask(id).subscribe(_ => {
+      this.getTasks()
+    })
+  }
   ngOnInit() {
     this.selectedTasks = [];
     this.tasks;

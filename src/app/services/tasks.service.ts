@@ -28,4 +28,16 @@ export class TasksService {
       },
     });
   }
+
+  deleteTask(id: number) {
+    return this.http.delete<void>(
+      `${this.apiUrl}/rest/v1/toDoList?id=eq.${id}`,
+      {
+        headers: {
+          apikey: this.apiKey,
+          Authorization: `Bearer ${this.apiKey}`,
+        },
+      }
+    );
+  }
 }

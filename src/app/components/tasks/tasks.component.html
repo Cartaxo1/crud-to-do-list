@@ -1,6 +1,8 @@
 <div id="tasks" class="card flex flex-wrap justify-content-center gap-3">
   <div class="p-2 border-1 surface-border border-round w-15rem">
-    <p class="text-center surface-border border-bottom-1">Tarefas em progresso</p>
+    <p class="text-center surface-border border-bottom-1">
+      Tarefas em progresso
+    </p>
 
     <ul class="list-none flex flex-column gap-2 p-0 m-0">
       @for(task of tasks; track task.id){
@@ -11,6 +13,7 @@
         (onDragEnd)="dragEnd()"
       >
         {{ task.title }}
+        <span (click)="deleteTask(task.id!)" class="cursor-pointer">...</span>
       </li>
       }
     </ul>
