@@ -43,7 +43,6 @@ export class HomeComponent {
   getTasks() {
     this.tasksService.getTasks().subscribe((tasks) => {
       this.tasks = tasks;
-      console.log(this.tasks);
     });
   }
 

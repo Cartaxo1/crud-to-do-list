@@ -23,17 +23,11 @@ export class TasksComponent {
   getTasks() {
     this.tasksService.getTasks().subscribe((tasks) => {
       this.tasks = tasks;
-      console.log(this.tasks);
     });
   }
 
   showDialog() {
-    if (this.visible !== true) {
-      this.visible = true;
-    } else {
-      this.visible = false;
-    }
-    console.log(this.visible);
+    this.visible = true;
   }
 
   deleteTask(id: number) {
