@@ -16,16 +16,14 @@
         {{ task.title }}
       </li>
       <p-dialog
+        [header]="task.title"
         [(visible)]="visible"
         [modal]="true"
         [breakpoints]="{ '1199px': '75vw', '575px': '90vw' }"
         [style]="{ width: '50vw' }"
         [draggable]="false"
         [resizable]="false"
-        >
-        <p>
-          {{ task.title }}
-        </p>
+      >
         <p>
           {{ task.description }}
         </p>
