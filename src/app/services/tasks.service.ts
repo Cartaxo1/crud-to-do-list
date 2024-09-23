@@ -40,4 +40,17 @@ export class TasksService {
       }
     );
   }
+
+  updateTask(id: number, task: any) {
+    return this.http.patch(
+      `${this.apiUrl}/rest/v1/toDoList?id=eq.${id}`,
+      task,
+      {
+        headers: {
+          apikey: this.apiKey,
+          Authorization: `Bearer ${this.apiKey}`,
+        },
+      }
+    );
+  }
 }
